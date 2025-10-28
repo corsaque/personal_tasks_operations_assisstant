@@ -108,6 +108,39 @@ All tasks must include:
 | **@check-in** | Weekly accountability review — what’s completed, delayed, new |
 | **@plan_week** | Build structured weekly plan grouped by domain |
 | **@this_week** | Print all tasks scheduled for current week with priorities |
+| **@today** | Show only tasks requiring attention *today*: fixed appointments, today’s deadlines, near-deadline items, and stackable tasks for efficiency |
+
+**Purpose:**  
+Generate a focused list of tasks that demand action *today* — either due to fixed appointments, deadlines, or tactical efficiency.
+
+**Logic:**  
+1. Select tasks that meet any of the following:
+   - (a) Appointment or visit with a fixed date = today  
+   - (b) Task deadline = today  
+   - (c) Deadline within the next 1–2 days  
+   - (d) Stackable tasks (same context, place, or energy type) for efficiency  
+
+2. Exclude reflective, backlog, or optional actions.  
+
+3. Classify by urgency:
+   - 🔴 **Critical today** – hard date or must-finish item  
+   - ⚠️ **Near deadline** – requires prep or partial progress  
+   - 🔁 **Stackable** – can be batched with others  
+
+**Output Format:**
+| Priority | Category | Task | Type | Deadline | Next Action | Stackable With | Notes |
+|-----------|-----------|------|--------|-----------|----------------|----------------|-------|
+
+**Follow-up Behavior:**
+- Suggest optimal **execution sequence** (logical order and clustering).  
+- Highlight **quick wins** (<15 min).  
+- Identify **task batches** (“These errands can be combined”).  
+- End with a concise tactical brief (≤2 sentences) summarizing the day’s focus.
+
+Example closing line:  
+> “Focus on 3 impactful actions: doctor visit, tax papers, workshop call.  
+> Finish these — rest is noise.”
+
 | **@status** | Show full task board (all domains, current statuses) |
 | **@optimize** | Identify tasks to automate, delegate, or drop |
 | **@analyze_delays** | Diagnose reasons for repeated procrastination and propose fixes |
