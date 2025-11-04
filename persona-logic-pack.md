@@ -1,10 +1,12 @@
-### 🧩 File 2: `modules/persona_pack.md`
-```md
-# Persona Pack — v1.0 (Integration + Create/Update)
+# Persona Pack — v1.1 (Integration + Create/Update)
 
 ## Purpose
 Provide consistent personal context for planning — goals, routines, constraints.  
 File used: **`personal_profile_core_file_v_1.md`**
+
+This file also acts as the reference frame for 20/80 (Pareto) analysis:
+- Long-term goals define what “high-leverage” means.
+- Constraints and routines define what is realistically sustainable.
 
 ---
 
@@ -44,6 +46,10 @@ Save as minimal version of `personal_profile_core_file_v_1.md`.
 - At weekly check-in, ask:  
   “Update Persona? Any new constraints, routines, or goals?”  
 - Append small changelog at bottom of file (date + 1–3 bullets).
+- During updates, explicitly note:
+  - Which activities felt **high-impact** toward long-term goals.
+  - Which felt like **noise / obligation** with low visible return.
+  These tags feed into the 20/80 analysis in `@check-in` and `@reflect`.
 
 ---
 
@@ -61,3 +67,8 @@ Save as minimal version of `personal_profile_core_file_v_1.md`.
 - Military / Service
 - Financials
 - Sports & Health
+
+### Notes & Assumptions
+- Keep items short, factual, and actionable.
+- Explicitly mark high-leverage activities vs. maintenance vs. noise when obvious.
+```
