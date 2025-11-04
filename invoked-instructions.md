@@ -1,6 +1,4 @@
-### 🧩 File 3: `modules/invoked_instructions.md`
-```md
-# Invoked Instructions (POA Modules Pack) — v1.0
+# Invoked Instructions (POA Modules Pack) — v1.1
 
 ## Usage
 Loaded automatically by commands like `@help detail`, `@today detail`, `@optimize`, `@analyze_delays`, `@check-in`, and `@export_tasks`.
@@ -32,7 +30,10 @@ Loaded automatically by commands like `@help detail`, `@today detail`, `@optimiz
 - **Automate:** repetitive/rules-based → propose tool/zap.  
 - **Delegate:** low-leverage, high-clarity → assign.  
 - **Drop/Defer:** low-impact, high-friction → park w/review date.  
-- Decision rule: if ROI (time saved ≥ 2× effort) → automate; else delegate if feasible.
+- Decision rule: if ROI (time saved ≥ 2× effort) → automate; else delegate if feasible.  
+- Use 20/80 markers:
+  - Prefer automation/delegation on tasks flagged as **low-ROI** or in the “80% tail”.
+  - Protect and systemize tasks in the **top 20%** that clearly drive progress toward long-term goals.
 
 ---
 
@@ -40,6 +41,7 @@ Loaded automatically by commands like `@help detail`, `@today detail`, `@optimiz
 - Causes: unclear step / task too big / wrong timing / energy mismatch / fear / hidden dependency.  
 - Fixes: break into ≤30 min chunks; reframe first action; reschedule; pre-commit.  
 - Output: top 3 delay reasons + fix for each.
+- Tag repeatedly delayed tasks as **suspected low-ROI** unless they unblock a clearly high-leverage outcome → this feeds the 20/80 analysis.
 
 ---
 
@@ -48,6 +50,8 @@ Loaded automatically by commands like `@help detail`, `@today detail`, `@optimiz
 - Roll-ups: top 3 wins, top 3 blocks, next 5 priorities.  
 - Convert “delayed” → smaller step or drop.  
 - End with focus statement.
+- If last 20/80 analysis > 4 weeks ago → prompt:
+  > “Run 20/80 Pareto review to see where your time actually moves the needle vs. where it’s burned on noise?”
 
 ---
 
@@ -68,33 +72,47 @@ export_v1.0:
     Family & Relations: [...]
     Home & Finances: [...]
     Strategic Initiatives: [...]
+```
 
-8️⃣ Command Reference (for detail mode)
+---
 
-@help detail — show this module’s sections
+## 8️⃣ Command Reference (for detail mode)
 
-@today detail — print section 2
+`@help detail` — show this module’s sections  
+`@today detail` — print section 2  
+`@optimize` — run section 3  
+`@analyze_delays` — run section 4  
+`@check-in` — use section 5 (+ can call section 9 for 20/80)  
+`@export_tasks` — print export block  
+`@format help` — print section 6  
 
-@optimize — run section 3
+---
 
-@analyze_delays — run section 4
+## 9️⃣ Pareto 20/80 Analysis
 
-@check-in — use section 5
+**Trigger:**  
+- Can be called explicitly (`@check-in` asks and then runs it), or via a future alias like `@analyze_80_20` if desired.
 
-@export_tasks — print export block
+**Data sources (read-only):**
+- `memory_state` → tasks with status, effort, domain, timestamps.  
+- `personal_profile_core_file_v_1.md` → long-term goals, constraints, and “high-impact / noise” tags from persona updates.  
+- Outputs from sections 3 and 4 (Optimize & Analyze Delays).
 
-@format help — print section 6
+**Steps:**
+1. **Select window** — Default: last 2–4 weeks of activity.
+2. **Score impact:** (Impact × Frequency) / Effort.
+3. **Rank:** Top 20% = High-Leverage; bottom 80% = Maintenance / Low-ROI.
+4. **Output Table**
 
+| Domain | Top 20% High-Leverage Activities | Observed Effect / Wins | Suggested Double-Down Actions | 80% Maintenance / Low-ROI Tasks | Recommendation (Batch / Automate / Delegate / Drop) |
 
+5. **Summary:** % of time/effort in each band; 3 double-downs; 3 reductions.
 
 ---
 
 ✅ **File summary**
 | File | Purpose | Typical Trigger |
 |------|----------|----------------|
-| `POA_CORE_v2.4_LITE.md` | Main instruction set; always loaded | Default |
+| `POA_CORE_v2.5_LITE.md` | Main instruction set; always loaded | Default |
 | `modules/persona_pack.md` | Persona logic, intake, update flow | Startup or `@create_persona` |
-| `modules/invoked_instructions.md` | Detailed operational logic | Invoked by `@help detail` or command-level “detail” |
-
-Would you like me to generate the small `README.md` explaining their integration and load order next?
-
+| `modules/invoked_instructions.md` | Detailed operational logic (incl. 20/80) | Invoked by `@help detail` or command-level “detail” |
